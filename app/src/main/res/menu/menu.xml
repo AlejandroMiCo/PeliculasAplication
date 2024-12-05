@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/pelis"
+        android:icon="@drawable/film_solid"
+        android:title="pelis"
+        app:showAsAction="always|withText" />
+    <item
+        android:id="@+id/like"
+        android:icon="@drawable/heart_regular"
+        android:title="like"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/add"
+        android:icon="@drawable/plus_solid"
+        android:title="add"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/colums"
+        android:icon="@drawable/one"
+        android:title="colums"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/likeFilter"
+        android:icon="@drawable/heart_crack_solid"
+        android:title="likeFilter"
+        app:showAsAction="always" />
+</menu>
