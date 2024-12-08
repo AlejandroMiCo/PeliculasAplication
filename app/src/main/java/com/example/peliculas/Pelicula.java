@@ -15,6 +15,18 @@ public class Pelicula implements Serializable {
 
     private SimpleDateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy");
 
+    public  Pelicula(){
+        this.clasi = 0;
+        this.director = "";
+        this.fecha = null;
+        this.portada = R.drawable.sincara;
+        this.sala = "";
+        this.titulo = "";
+        this.duracion = 0;
+        this.favorita = false;
+    }
+
+
     public Pelicula(String titulo, String director, int duracion, Date fecha, String sala, int clasi, int portada) {
         this.clasi = clasi;
         this.director = director;

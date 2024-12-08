@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     boolean oneRow = true;
     boolean isLikedPress = false;
     ArrayList<Pelicula> pelisFiltradas;
+    private ImageButton btnHideTlb;
 
 
     @Override
@@ -48,8 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
 
-        actionBar.setTitle("Peliculas");
-        actionBar.setSubtitle(peliculas.size() + "");
 
 
         txtnombre = findViewById(R.id.textView);
@@ -63,7 +63,29 @@ public class MainActivity extends AppCompatActivity {
 
         rv.setAdapter(miAdaptador);
 
+        btnHideTlb = findViewById(R.id.btnHideTlb);
+        btnHideTlb.setOnClickListener(view -> {
+            if (!getSupportActionBar().isShowing()) {
+                btnHideTlb.setImageResource(R.drawable.maximize);
+                getSupportActionBar().show();
+            } else {
+                btnHideTlb.setImageResource(R.drawable.minimise);
+                getSupportActionBar().hide();
+            }
+        });
 
+
+        actionBar.setTitle("Peliculas");
+        actionBar.setSubtitle(peliculas.size() + "");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        miAdaptador.notifyDataSetChanged();
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setSubtitle(peliculas.size() + "");
     }
 
     @Override
@@ -78,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.pelis) {
             Toast.makeText(this, "pelis", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, Cartelera.class);
+            startActivity(intent);
             return true;
         } else if (id == R.id.like) {
             Toast.makeText(this, "like", Toast.LENGTH_SHORT).show();

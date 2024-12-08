@@ -136,12 +136,13 @@
             android:text="Clasificacion por edades" />
 
         <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/rdG"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -149,28 +150,28 @@
                 android:text="G" />
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/rdPg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="PG" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/rdR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="R" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/rdPg13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="PG-13" />
 
             <RadioButton
-                android:id="@+id/radioButton5"
+                android:id="@+id/rdNc17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
